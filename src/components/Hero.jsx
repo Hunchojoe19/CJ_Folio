@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const initialImages = [
   "/src/assets/images/guy_holding_orange_1774210235546.png",
@@ -11,18 +11,28 @@ const initialImages = [
   "/src/assets/images/bw_guy_looking_up_1774210268030.png"
 ];
 
+const springConfig = {
+  type: "spring",
+  stiffness: 80,
+  damping: 20,
+  mass: 1
+};
+
 const Hero = () => {
   const [images, setImages] = useState(initialImages);
+  const [layoutIndex, setLayoutIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      // 1. Swap images
       setImages(prev => {
         const newArr = [...prev];
-        // Rotate the array by taking the last item and putting it first
         const last = newArr.pop();
         newArr.unshift(last);
         return newArr;
       });
+      // 2. Change grid layout pattern dynamically
+      setLayoutIndex(prev => (prev + 1) % 4);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
@@ -53,35 +63,50 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Masonry Grid with Animated Interchange */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[600px]">
+        {/* Highly Animated Masonry Grid */}
+        <div className="flex gap-4 h-[600px] w-full">
           {/* Left Column */}
-          <div className="flex flex-col gap-4 col-span-1 h-full">
-            <div className="relative flex-1 rounded-2xl overflow-hidden bg-gray-800">
-               <motion.img layoutId={images[0]} key={images[0]} src={images[0]} alt="Photography 1" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-            </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden bg-gray-800">
-               <motion.img layoutId={images[1]} key={images[1]} src={images[1]} alt="Photography 2" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-            </div>
-          </div>
+          <motion.div 
+            layout 
+            transition={springConfig}
+            className="flex flex-col gap-4 h-full" 
+            style={{ flex: layoutIndex === 0 || layoutIndex === 3 ? 1 : 2 }}
+          >
+            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex % 2 === 0 ? 2 : 1 }}>
+               <motion.img layoutId={images[0]} transition={springConfig} key={images[0]} src={images[0]} alt="Photography 1" className="absolute inset-0 w-full h-full object-cover" />
+            </motion.div>
+            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex % 2 === 0 ? 1 : 2 }}>
+               <motion.img layoutId={images[1]} transition={springConfig} key={images[1]} src={images[1]} alt="Photography 2" className="absolute inset-0 w-full h-full object-cover" />
+            </motion.div>
+          </motion.div>
 
           {/* Center Column */}
-          <div className="col-span-2 h-full rounded-2xl overflow-hidden bg-yellow-500 relative">
-            <motion.img layoutId={images[2]} key={images[2]} src={images[2]} alt="Main Photography" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-          </div>
+          <motion.div 
+            layout 
+            transition={springConfig}
+            className="h-full rounded-2xl overflow-hidden relative" 
+            style={{ flex: layoutIndex === 0 || layoutIndex === 1 ? 2 : 1 }}
+          >
+            <motion.img layoutId={images[2]} transition={springConfig} key={images[2]} src={images[2]} alt="Main Photography" className="absolute inset-0 w-full h-full object-cover" />
+          </motion.div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-4 col-span-1 h-full">
-            <div className="relative h-48 rounded-2xl overflow-hidden bg-gray-800">
-               <motion.img layoutId={images[3]} key={images[3]} src={images[3]} alt="Photography 3" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-            </div>
-            <div className="relative flex-1 rounded-2xl overflow-hidden bg-gray-800">
-               <motion.img layoutId={images[4]} key={images[4]} src={images[4]} alt="Photography 4" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-            </div>
-            <div className="relative h-40 rounded-2xl overflow-hidden bg-gray-800">
-               <motion.img layoutId={images[5]} key={images[5]} src={images[5]} alt="Photography 5" className="absolute inset-0 w-full h-full object-cover" transition={{ duration: 0.8, ease: "easeInOut" }} />
-            </div>
-          </div>
+          <motion.div 
+            layout 
+            transition={springConfig}
+            className="flex flex-col gap-4 h-full" 
+            style={{ flex: layoutIndex === 2 || layoutIndex === 3 ? 2 : 1 }}
+          >
+            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex === 0 || layoutIndex === 2 ? 1 : 2 }}>
+               <motion.img layoutId={images[3]} transition={springConfig} key={images[3]} src={images[3]} alt="Photography 3" className="absolute inset-0 w-full h-full object-cover" />
+            </motion.div>
+            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: 1.5 }}>
+               <motion.img layoutId={images[4]} transition={springConfig} key={images[4]} src={images[4]} alt="Photography 4" className="absolute inset-0 w-full h-full object-cover" />
+            </motion.div>
+            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex === 1 || layoutIndex === 3 ? 1 : 2 }}>
+               <motion.img layoutId={images[5]} transition={springConfig} key={images[5]} src={images[5]} alt="Photography 5" className="absolute inset-0 w-full h-full object-cover" />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
