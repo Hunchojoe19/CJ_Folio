@@ -3,12 +3,12 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const initialImages = [
-  "/src/assets/images/guy_holding_orange_1774210235546.png",
-  "/src/assets/images/small_woman_portrait_1774210283257.png",
-  "/src/assets/images/hero_center_woman_1774210152840.png",
-  "/src/assets/images/hero_top_right_man_1774210178440.png",
-  "/src/assets/images/woman_red_pattern_shirt_1774210251156.png",
-  "/src/assets/images/bw_guy_looking_up_1774210268030.png"
+  "/images/guy_holding_orange_1774210235546.png",
+  "/images/small_woman_portrait_1774210283257.png",
+  "/images/hero_center_woman_1774210152840.png",
+  "/images/hero_top_right_man_1774210178440.png",
+  "/images/woman_red_pattern_shirt_1774210251156.png",
+  "/images/bw_guy_looking_up_1774210268030.png"
 ];
 
 const springConfig = {
