@@ -2,6 +2,35 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const menuVariants = {
+  hidden: { 
+    opacity: 0, 
+    height: 0, 
+    transition: { 
+      duration: 0.3, 
+      ease: "easeInOut",
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      when: "afterChildren" // Wait for children to finish exiting before collapsing height
+    } 
+  },
+  visible: { 
+    opacity: 1, 
+    height: 'auto', 
+    transition: { 
+      duration: 0.4, 
+      ease: [0.16, 1, 0.3, 1], // Custom snappy ease
+      staggerChildren: 0.1, 
+      delayChildren: 0.1 
+    } 
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -15 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 400, damping: 30 } }
+};
+
 const Header = () => {
   const [activeTab, setActiveTab] = useState('#home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,12 +72,22 @@ const Header = () => {
           Contact Me
         </button>
 
-        {/* Mobile Hamburger Menu */}
+        {/* Mobile Hamburger Menu Toggle */}
         <button 
-          className="md:hidden flex items-center justify-center p-2.5 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition"
+          className="md:hidden flex items-center justify-center p-2.5 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition overflow-hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+          <AnimatePresence mode="wait">
+            {isMobileMenuOpen ? (
+              <motion.div key="close" initial={{ opacity: 0, rotate: -90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: 90 }} transition={{ duration: 0.2 }}>
+                <X className="w-5 h-5 text-white" />
+              </motion.div>
+            ) : (
+              <motion.div key="menu" initial={{ opacity: 0, rotate: 90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: -90 }} transition={{ duration: 0.2 }}>
+                <Menu className="w-5 h-5 text-white" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
       </div>
 
@@ -56,13 +95,15 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.nav 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
             className="md:hidden flex flex-col pt-6 pb-2 space-y-4 overflow-hidden"
           >
             {navItems.map((item) => (
-              <a 
+              <motion.a 
+                variants={itemVariants}
                 key={item.href}
                 href={item.href} 
                 onClick={() => {
@@ -76,11 +117,14 @@ const Header = () => {
                 }`}
               >
                 {item.label}
-              </a>
+              </motion.a>
             ))}
-            <button className="w-full px-6 py-4 mt-6 text-sm font-medium text-white transition-colors border border-gray-800 bg-[#121214] hover:bg-gray-800 rounded-lg">
+            <motion.button 
+              variants={itemVariants}
+              className="w-full px-6 py-4 mt-6 text-sm font-medium text-white transition-colors border border-gray-800 bg-[#121214] hover:bg-gray-800 rounded-lg"
+            >
               Contact Me
-            </button>
+            </motion.button>
           </motion.nav>
         )}
       </AnimatePresence>
