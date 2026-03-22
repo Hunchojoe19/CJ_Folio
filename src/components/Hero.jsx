@@ -18,6 +18,29 @@ const springConfig = {
   mass: 1
 };
 
+const HeroImage = ({ image, flex, style }) => (
+  <motion.div 
+    layout 
+    transition={springConfig} 
+    className="relative rounded-2xl overflow-hidden bg-gray-900 group cursor-pointer"
+    style={{ flex, ...style }}
+  >
+    <motion.img 
+      layoutId={image} 
+      transition={springConfig} 
+      key={image} 
+      src={image} 
+      alt="Photography" 
+      className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-3" 
+    />
+    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
+      <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 transform scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 delay-75 ease-out">
+        <ArrowUpRight className="w-6 h-6 text-white" />
+      </div>
+    </div>
+  </motion.div>
+);
+
 const Hero = () => {
   const [images, setImages] = useState(initialImages);
   const [layoutIndex, setLayoutIndex] = useState(0);
@@ -72,23 +95,12 @@ const Hero = () => {
             className="flex flex-col gap-4 h-full" 
             style={{ flex: layoutIndex === 0 || layoutIndex === 3 ? 1 : 2 }}
           >
-            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex % 2 === 0 ? 2 : 1 }}>
-               <motion.img layoutId={images[0]} transition={springConfig} key={images[0]} src={images[0]} alt="Photography 1" className="absolute inset-0 w-full h-full object-cover" />
-            </motion.div>
-            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex % 2 === 0 ? 1 : 2 }}>
-               <motion.img layoutId={images[1]} transition={springConfig} key={images[1]} src={images[1]} alt="Photography 2" className="absolute inset-0 w-full h-full object-cover" />
-            </motion.div>
+            <HeroImage image={images[0]} flex={layoutIndex % 2 === 0 ? 2 : 1} />
+            <HeroImage image={images[1]} flex={layoutIndex % 2 === 0 ? 1 : 2} />
           </motion.div>
 
           {/* Center Column */}
-          <motion.div 
-            layout 
-            transition={springConfig}
-            className="h-full rounded-2xl overflow-hidden relative" 
-            style={{ flex: layoutIndex === 0 || layoutIndex === 1 ? 2 : 1 }}
-          >
-            <motion.img layoutId={images[2]} transition={springConfig} key={images[2]} src={images[2]} alt="Main Photography" className="absolute inset-0 w-full h-full object-cover" />
-          </motion.div>
+          <HeroImage image={images[2]} flex={layoutIndex === 0 || layoutIndex === 1 ? 2 : 1} style={{ height: '100%' }} />
 
           {/* Right Column */}
           <motion.div 
@@ -97,15 +109,9 @@ const Hero = () => {
             className="flex flex-col gap-4 h-full" 
             style={{ flex: layoutIndex === 2 || layoutIndex === 3 ? 2 : 1 }}
           >
-            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex === 0 || layoutIndex === 2 ? 1 : 2 }}>
-               <motion.img layoutId={images[3]} transition={springConfig} key={images[3]} src={images[3]} alt="Photography 3" className="absolute inset-0 w-full h-full object-cover" />
-            </motion.div>
-            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: 1.5 }}>
-               <motion.img layoutId={images[4]} transition={springConfig} key={images[4]} src={images[4]} alt="Photography 4" className="absolute inset-0 w-full h-full object-cover" />
-            </motion.div>
-            <motion.div layout transition={springConfig} className="relative rounded-2xl overflow-hidden bg-gray-800" style={{ flex: layoutIndex === 1 || layoutIndex === 3 ? 1 : 2 }}>
-               <motion.img layoutId={images[5]} transition={springConfig} key={images[5]} src={images[5]} alt="Photography 5" className="absolute inset-0 w-full h-full object-cover" />
-            </motion.div>
+            <HeroImage image={images[3]} flex={layoutIndex === 0 || layoutIndex === 2 ? 1 : 2} />
+            <HeroImage image={images[4]} flex={1.5} />
+            <HeroImage image={images[5]} flex={layoutIndex === 1 || layoutIndex === 3 ? 1 : 2} />
           </motion.div>
         </div>
       </div>
