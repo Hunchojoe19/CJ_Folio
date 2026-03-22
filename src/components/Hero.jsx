@@ -104,23 +104,23 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-20 pb-10 px-10 bg-[#070708] text-white overflow-hidden">
+    <section className="pt-10 md:pt-20 pb-10 px-6 md:px-10 bg-[#070708] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-0">
           <div>
-            <p className="text-gray-400 tracking-[0.2em] text-xs font-semibold mb-4 uppercase">
+            <p className="text-gray-400 tracking-[0.2em] text-xs font-semibold mb-3 md:mb-4 uppercase">
               Stunning Photography By
             </p>
-            <h1 className="text-7xl md:text-8xl font-bold tracking-tighter uppercase whitespace-nowrap">
+            <h1 className="text-[3.25rem] leading-[1.1] md:text-8xl font-bold tracking-tighter uppercase wrap-break-word md:whitespace-nowrap">
               Damien Braun
             </h1>
           </div>
           
-          <div className="flex items-center space-x-4 mb-2">
-            <div className="flex items-center justify-center w-32 h-12 bg-[#2a2a30] rounded-l-full rounded-r-full relative border border-gray-700">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:space-x-4 mb-2">
+            <div className="flex items-center justify-center w-28 md:w-32 h-10 md:h-12 bg-[#2a2a30] rounded-l-full rounded-r-full relative border border-gray-700">
               <span className="text-sm font-medium pr-8">Let's</span>
-              <div className="absolute right-1 w-10 h-10 bg-[#4f46e5] rounded-full flex items-center justify-center">
-                 <ArrowUpRight className="w-5 h-5 text-white" />
+              <div className="absolute right-1 w-8 h-8 md:w-10 md:h-10 bg-[#4f46e5] rounded-full flex items-center justify-center">
+                 <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
             </div>
             <span className="text-4xl md:text-5xl font-bold uppercase tracking-tight">
@@ -131,7 +131,7 @@ const Hero = () => {
 
         {/* Highly Animated Masonry Grid */}
         <div 
-          className="flex gap-4 h-[600px] w-full"
+          className="flex gap-2 md:gap-4 h-[350px] md:h-[600px] w-full"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
