@@ -5,17 +5,17 @@ const projects = [
   {
     title: 'Faces Of Resilience',
     date: 'March 2022',
-    image: '/src/assets/images/portfolio_resilience_1774210917961.png',
+    image: '/images/portfolio_resilience_1774210917961.png',
   },
   {
     title: 'A Wedding Tale',
     date: 'January 2020',
-    image: '/src/assets/images/portfolio_wedding_1774210932102.png',
+    image: '/images/portfolio_wedding_1774210932102.png',
   },
   {
     title: 'Product Elegance',
     date: 'January 2020',
-    image: '/src/assets/images/portfolio_product_1774210946377.png',
+    image: '/images/portfolio_product_1774210946377.png',
   }
 ];
 
