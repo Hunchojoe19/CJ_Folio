@@ -111,7 +111,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-10 md:pt-20 pb-10 px-6 md:px-10 bg-[#070708] text-white overflow-hidden">
+    <section id='home' className="pt-10 md:pt-20 pb-10 px-6 md:px-10 bg-[#070708] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-0">
           <div>
