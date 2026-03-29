@@ -12,7 +12,7 @@ const faqsLeft = [
   },
   {
     question: "What equipment do you use for your photography?",
-    answer: "I use professional-grade DSLR and mirrorless cameras along with a variety of premium lenses to ensure the highest quality images."
+    answer: "I use mirrorless cameras along with a variety of premium lenses to ensure the highest quality images."
   },
   {
     question: "Can I request a specific location for a shoot?",
@@ -42,7 +42,7 @@ const faqsRight = [
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-800">
-      <button 
+      <button
         className="w-full py-6 flex items-center justify-between text-left focus:outline-none"
         onClick={onClick}
       >
@@ -53,7 +53,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
           {isOpen ? <ChevronUp className="w-4 h-4 text-white" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
         </div>
       </button>
-      <div 
+      <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
         <p className="text-gray-500 text-sm leading-relaxed pr-8">
@@ -82,26 +82,26 @@ const FAQ = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
           <div>
-             {faqsLeft.map((faq, idx) => (
-                <FAQItem 
-                  key={idx}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openIndexLeft === idx}
-                  onClick={() => setOpenIndexLeft(openIndexLeft === idx ? -1 : idx)}
-                />
-             ))}
+            {faqsLeft.map((faq, idx) => (
+              <FAQItem
+                key={idx}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openIndexLeft === idx}
+                onClick={() => setOpenIndexLeft(openIndexLeft === idx ? -1 : idx)}
+              />
+            ))}
           </div>
           <div>
-             {faqsRight.map((faq, idx) => (
-                <FAQItem 
-                  key={idx}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openIndexRight === idx}
-                  onClick={() => setOpenIndexRight(openIndexRight === idx ? -1 : idx)}
-                />
-             ))}
+            {faqsRight.map((faq, idx) => (
+              <FAQItem
+                key={idx}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openIndexRight === idx}
+                onClick={() => setOpenIndexRight(openIndexRight === idx ? -1 : idx)}
+              />
+            ))}
           </div>
         </div>
       </div>
