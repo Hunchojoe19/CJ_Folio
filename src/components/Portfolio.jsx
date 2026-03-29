@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 const projects = [
@@ -21,10 +21,34 @@ const projects = [
     title: 'A Graduate',
     date: 'October 2025',
     image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812917/PHOTO-2026-03-24-08-41-37_5_qoks2s.jpg',
-  }
+  },
+  {
+    title: 'A Group of Readers',
+    date: 'January 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812917/PHOTO-2026-03-24-08-41-37_7_apwjjz.jpg',
+  },
+  {
+    title: 'Asia on Dinner',
+    date: 'September 2025',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812922/7130NXBH_iogefe.jpg',
+  },
 ];
 
 const Portfolio = () => {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="portfolio" className="py-20 px-10 bg-[#070708] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -40,10 +64,16 @@ const Portfolio = () => {
 
           <div className="flex items-center space-x-4 mt-6 md:mt-0">
             <div className="flex space-x-2">
-              <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+              <button
+                onClick={scrollLeft}
+                className="w-12 h-12 cursor-pointer border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition"
+              >
                 <ArrowLeft className="w-5 h-5 text-gray-400" />
               </button>
-              <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+              <button
+                onClick={scrollRight}
+                className="w-12 h-12 cursor-pointer border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition"
+              >
                 <ArrowRight className="w-5 h-5 text-gray-400" />
               </button>
             </div>
@@ -54,9 +84,12 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-6 scroll-smooth no-scrollbar pb-6"
+        >
           {projects.map((project, idx) => (
-            <div key={idx} className="flex flex-col group cursor-pointer">
+            <div key={idx} className="flex flex-col group cursor-pointer min-w-[300px] md:min-w-[400px]">
               <div className="relative h-[400px] mb-6 rounded-3xl overflow-hidden border border-gray-800">
                 <img
                   src={project.image}
