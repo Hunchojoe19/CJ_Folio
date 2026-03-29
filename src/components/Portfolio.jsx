@@ -13,9 +13,14 @@ const projects = [
     image: '/images/portfolio_wedding_1774210932102.png',
   },
   {
-    title: 'Product Elegance',
-    date: 'January 2020',
-    image: '/images/portfolio_product_1774210946377.png',
+    title: 'A Dinner Outing',
+    date: 'May 2025',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812916/PHOTO-2026-03-24-08-41-37_4_xaah7d.jpg',
+  },
+  {
+    title: 'A Graduate',
+    date: 'October 2025',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812917/PHOTO-2026-03-24-08-41-37_5_qoks2s.jpg',
   }
 ];
 
@@ -34,29 +39,29 @@ const Portfolio = () => {
           </div>
 
           <div className="flex items-center space-x-4 mt-6 md:mt-0">
-             <div className="flex space-x-2">
-               <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
-                 <ArrowLeft className="w-5 h-5 text-gray-400" />
-               </button>
-               <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
-                 <ArrowRight className="w-5 h-5 text-gray-400" />
-               </button>
-             </div>
-             <button className="flex items-center space-x-2 px-6 py-3 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition text-sm">
-               <span>View Works</span>
-               <ArrowUpRight className="w-4 h-4 text-[#4f46e5]" />
-             </button>
+            <div className="flex space-x-2">
+              <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                <ArrowLeft className="w-5 h-5 text-gray-400" />
+              </button>
+              <button className="w-12 h-12 border border-gray-800 bg-[#121214] rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                <ArrowRight className="w-5 h-5 text-gray-400" />
+              </button>
+            </div>
+            {/* <button className="flex items-center space-x-2 px-6 py-3 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition text-sm">
+              <span>View Works</span>
+              <ArrowUpRight className="w-4 h-4 text-[#4f46e5]" />
+            </button> */}
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col group cursor-pointer">
               <div className="relative h-[400px] mb-6 rounded-3xl overflow-hidden border border-gray-800">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex items-center justify-between px-2">
@@ -64,10 +69,10 @@ const Portfolio = () => {
                   <h3 className="text-lg font-medium">{project.title}</h3>
                   <p className="text-sm text-gray-500">{project.date}</p>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-400 group-hover:text-white transition">
+                {/* <div className="flex items-center space-x-2 text-sm text-gray-400 group-hover:text-white transition">
                   <span className="uppercase tracking-widest text-xs font-semibold">View Project</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
