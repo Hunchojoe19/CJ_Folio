@@ -39,7 +39,7 @@ const Header = () => {
     { label: 'Home', href: '#home' },
     { label: 'About Me', href: '#about' },
     { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Services', href: '#services' },
+    // { label: 'Services', href: '#services' },
   ];
 
   return (
@@ -57,8 +57,8 @@ const Header = () => {
               href={item.href}
               onClick={() => setActiveTab(item.href)}
               className={`px-6 py-2 text-sm rounded-full transition-colors ${activeTab === item.href
-                  ? 'text-white bg-gray-800'
-                  : 'text-gray-400 hover:text-white'
+                ? 'text-white bg-gray-800'
+                : 'text-gray-400 hover:text-white'
                 }`}
             >
               {item.label}
@@ -110,8 +110,8 @@ const Header = () => {
                   setIsMobileMenuOpen(false); // Close menu on click
                 }}
                 className={`text-lg font-medium transition-colors ${activeTab === item.href
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
+                  ? 'text-white'
+                  : 'text-gray-400 hover:text-white'
                   }`}
               >
                 {item.label}
