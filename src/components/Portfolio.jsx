@@ -32,6 +32,26 @@ const projects = [
     date: 'September 2025',
     image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1774812922/7130NXBH_iogefe.jpg',
   },
+  {
+    title: 'Annie and Her Dog',
+    date: 'April 2025',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1768150024/cld-sample.jpg',
+  },
+  {
+    title: 'My Doggies',
+    date: 'December 2025',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1768150010/samples/animals/three-dogs.jpg',
+  },
+  {
+    title: 'A Musical Concert on the Street',
+    date: 'January 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1768150010/samples/people/jazz.jpg',
+  },
+  {
+    title: 'A Watch',
+    date: 'February 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1768150007/samples/ecommerce/analog-classic.jpg',
+  },
 ];
 
 const Portfolio = () => {
