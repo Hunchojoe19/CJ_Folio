@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
@@ -56,6 +57,7 @@ const projects = [
 
 const Portfolio = () => {
   const scrollRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -97,10 +99,6 @@ const Portfolio = () => {
                 <ArrowRight className="w-5 h-5 text-gray-400" />
               </button>
             </div>
-            {/* <button className="flex items-center space-x-2 px-6 py-3 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition text-sm">
-              <span>View Works</span>
-              <ArrowUpRight className="w-4 h-4 text-[#4f46e5]" />
-            </button> */}
           </div>
         </div>
 
@@ -109,7 +107,11 @@ const Portfolio = () => {
           className="flex overflow-x-auto gap-6 scroll-smooth no-scrollbar pb-6"
         >
           {projects.map((project, idx) => (
-            <div key={idx} className="flex flex-col group cursor-pointer min-w-[300px] md:min-w-[400px]">
+            <div
+              key={idx}
+              onClick={() => setSelectedProject(project)}
+              className="flex flex-col group cursor-pointer min-w-[300px] md:min-w-[400px]"
+            >
               <div className="relative h-[400px] mb-6 rounded-3xl overflow-hidden border border-gray-800">
                 <img
                   src={project.image}
@@ -122,17 +124,63 @@ const Portfolio = () => {
                   <h3 className="text-lg font-medium">{project.title}</h3>
                   <p className="text-sm text-gray-500">{project.date}</p>
                 </div>
-                {/* <div className="flex items-center space-x-2 text-sm text-gray-400 group-hover:text-white transition">
-                  <span className="uppercase tracking-widest text-xs font-semibold">View Project</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </div> */}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox Pop-up */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10"
+          >
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-pointer"
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-5xl max-h-full flex flex-col items-center"
+            >
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute -top-12 right-0 md:-right-12 md:top-0 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors z-50 cursor-pointer"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              <div className="w-full h-full overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-[#0a0a0c]">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-auto max-h-[80vh] object-contain mx-auto"
+                />
+                <div className="p-6 bg-linear-to-t from-black/80 to-transparent absolute bottom-0 left-0 right-0">
+                  <h3 className="text-2xl font-semibold text-white">{selectedProject.title}</h3>
+                  <p className="text-gray-300">{selectedProject.date}</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
 export default Portfolio;
+
