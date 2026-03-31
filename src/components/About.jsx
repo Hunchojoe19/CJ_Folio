@@ -75,10 +75,10 @@ const About = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex space-x-3 text-sm font-medium">
+              {/* <div className="flex space-x-3 text-sm font-medium">
                 <button className="px-6 py-3 bg-[#121214] border border-gray-800 rounded-lg hover:bg-gray-800 transition text-white">Let's Work</button>
                 <button className="px-6 py-3 bg-[#121214] border border-gray-800 rounded-lg hover:bg-gray-800 transition text-white">Download CV</button>
-              </div>
+              </div> */}
             </div>
 
           </div>
