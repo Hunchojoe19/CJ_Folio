@@ -118,7 +118,7 @@ const Hero = () => {
             <p className="text-gray-400 tracking-[0.2em] text-xs font-semibold mb-3 md:mb-4 uppercase">
               Stunning Photography By
             </p>
-            <h1 className="text-[3.25rem] leading-[1.1] md:text-5xl font-bold tracking-tighter uppercase wrap-break-word md:whitespace-nowrap">
+            <h1 className="text-lg leading-[1.1] md:text-5xl font-bold tracking-tighter uppercase wrap-break-word md:whitespace-nowrap">
               DOC_Photography
             </h1>
           </div>
