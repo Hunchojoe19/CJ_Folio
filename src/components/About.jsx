@@ -1,5 +1,6 @@
 import React from 'react';
-import { Star, Instagram } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -58,14 +59,14 @@ const About = () => {
                 </div>
               </div>
             </div>
-
+            <FaInstagram />
             {/* Socials & Actions */}
             <div className="flex items-center mt-auto">
               {/* Social icons */}
 
               <a href="https://www.instagram.com/doc_photoz/?hl=en" className="hover:text-white transition">
                 <button className="cursor-pointer flex items-center space-x-2 mb-4 md:mb-0">
-                  <Instagram className="w-4 h-4" />
+                  <FaInstagram className="w-4 h-4" />
                   <p className="">Instagram</p>
                   {/* <a href="#" className="hover:text-white transition"><Twitter className="w-4 h-4" /></a>
             <a href="#" className="hover:text-white transition"><Linkedin className="w-4 h-4" /></a> */}
