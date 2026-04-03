@@ -45,9 +45,9 @@ const Header = () => {
   return (
     <header className="flex flex-col py-4 px-6 md:py-6 md:px-10 border-b border-gray-800/50 bg-[#070708] backdrop-blur-md sticky top-0 z-50">
       <div className="flex items-center justify-between w-full">
-        <div className="text-xl md:text-2xl font-bold tracking-widest text-white uppercase">
-          DOC_PHOTOGRAPHY
-        </div>
+        {/* <div className="text-xl md:text-2xl font-bold tracking-widest text-white uppercase">
+          
+        </div> */}
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1 bg-[#121214] border border-gray-800 rounded-full px-2 py-2">
