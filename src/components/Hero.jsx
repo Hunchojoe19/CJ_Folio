@@ -119,7 +119,7 @@ const Hero = () => {
               Stunning Photography By
             </p>
             <h1 className="text-lg leading-[1.1] md:text-5xl font-bold tracking-tighter uppercase wrap-break-word md:whitespace-nowrap">
-              DOC &nbsp; Photography
+              DOC &nbsp;Photography
             </h1>
           </div>
 
