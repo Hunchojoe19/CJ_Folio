@@ -62,7 +62,7 @@ const Testimonials = () => {
                     <h4 className="text-lg font-medium">{test.name}</h4>
                     <p className="text-gray-500 text-xs mt-1">{test.location}</p>
                   </div>
-                  <div className="flex space-x-2">
+                  {/* <div className="flex space-x-2">
                     <button className="w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-gray-700 transition">
                       <Facebook className="w-3 h-3 text-gray-300" />
                     </button>
@@ -72,7 +72,7 @@ const Testimonials = () => {
                     <button className="w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-gray-700 transition">
                       <Linkedin className="w-3 h-3 text-gray-300" />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
