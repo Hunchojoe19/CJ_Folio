@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowUpRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Marquee from './Marquee';
 
 const Footer = () => {
@@ -69,13 +69,14 @@ const Footer = () => {
             <span>|</span>
             <a href="#" className="hover:text-gray-300 transition">Privacy Policy</a>
           </div>
-
-          <div className="flex space-x-6 mb-4 md:mb-0">
-            <a href="#" className="hover:text-white transition"><Facebook className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-white transition"><Twitter className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-white transition"><Linkedin className="w-4 h-4" /></a>
-          </div>
-
+          <a href="https://www.instagram.com/doc_photoz/?hl=en" className="hover:text-white transition">
+            <button className="cursor-pointer flex space-x-2 mb-4 md:mb-0">
+              <Instagram className="w-4 h-4" />
+              <p className="">Instagram</p>
+              {/* <a href="#" className="hover:text-white transition"><Twitter className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-white transition"><Linkedin className="w-4 h-4" /></a> */}
+            </button>
+          </a>
           <p>© 2026 Doc Photography. All rights reserved.</p>
         </div>
       </div>
