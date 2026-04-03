@@ -53,6 +53,27 @@ const projects = [
     date: 'February 2026',
     image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1768150007/samples/ecommerce/analog-classic.jpg',
   },
+  {
+    title: 'Proud Guests',
+    date: 'March 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1775244019/DSC02074_e6cnoa.jpg',
+  },
+  {
+    title: 'Champions of the Court',
+    date: 'March 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1775244040/DSC02378_a2rspt.jpg',
+  },
+  {
+    title: 'Man of the Moment',
+    date: 'March 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1775244002/DSC01928_h3jjae.jpg',
+  },
+  {
+    title: 'Aim for the Net',
+    date: 'March 2026',
+    image: 'https://res.cloudinary.com/dc59hhvse/image/upload/v1775244000/DSC02065_twk05e.jpg',
+  },
+
 ];
 
 const Portfolio = () => {
