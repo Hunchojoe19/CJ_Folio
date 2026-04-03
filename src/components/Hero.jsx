@@ -15,7 +15,12 @@ const initialImages = [
   "https://res.cloudinary.com/dc59hhvse/image/upload/v1774812917/PHOTO-2026-03-24-08-41-37_8_iteoqg.jpg",
   "https://res.cloudinary.com/dc59hhvse/image/upload/v1774812917/PHOTO-2026-03-24-08-41-37_7_apwjjz.jpg",
   "https://res.cloudinary.com/dc59hhvse/image/upload/v1774812922/8BGM7H7X_lshtmv.jpg",
-  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775241608/WhatsApp_Image_2026-04-02_at_10.25.34_p0mtgy.jpg"
+  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775241608/WhatsApp_Image_2026-04-02_at_10.25.34_p0mtgy.jpg",
+  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775244005/DSC01938_yotwuh.jpg",
+  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775244000/DSC02065_twk05e.jpg",
+  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775244056/DSC02255_qrvwwb.jpg",
+  "https://res.cloudinary.com/dc59hhvse/image/upload/v1775244036/DSC02111_ignf4w.jpg",
+
 ];
 
 const springConfig = {
