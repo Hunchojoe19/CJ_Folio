@@ -76,7 +76,7 @@ const Footer = () => {
             <a href="#" className="hover:text-white transition"><Linkedin className="w-4 h-4" /></a>
           </div>
 
-          <p>© 2024 Doc Photography. All rights reserved.</p>
+          <p>© 2026 Doc Photography. All rights reserved.</p>
         </div>
       </div>
     </footer>
