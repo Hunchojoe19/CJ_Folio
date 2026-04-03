@@ -59,7 +59,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <FaInstagram />
+
             {/* Socials & Actions */}
             <div className="flex items-center mt-auto">
               {/* Social icons */}
