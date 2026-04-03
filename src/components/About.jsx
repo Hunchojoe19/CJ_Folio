@@ -11,7 +11,7 @@ const About = () => {
           </p>
           <div className="flex flex-col items-start gap-y-3 md:flex-row md:items-center justify-between">
             <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight">
-              I am DOC Photography
+              I am DOC&nbsp; Photography
             </h2>
             {/* <button className="flex items-center space-x-2 px-6 py-3 border border-gray-800 rounded-lg bg-[#121214] hover:bg-gray-800 transition text-sm">
               <span>Know More</span>
