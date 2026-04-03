@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, ArrowDownRight, Facebook, Twitter, Linkedin, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowDownRight, Star } from 'lucide-react';
 
 const testimonials = [
   {
