@@ -28,7 +28,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Links */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="flex flex-col space-y-4">
               <h4 className="text-gray-400 uppercase tracking-widest text-xs font-semibold mb-2">Home</h4>
