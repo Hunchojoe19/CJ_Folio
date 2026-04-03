@@ -23,7 +23,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Main Photo Card */}
           <div className="relative rounded-t-[3rem] rounded-b-2xl overflow-hidden h-[600px] border border-gray-800">
-            <img src="https://res.cloudinary.com/dc59hhvse/image/upload/v1774812307/WhatsApp_Image_2026-03-23_at_10.22.05_u5izaw.jpg" alt="Damien Braun" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="https://res.cloudinary.com/dc59hhvse/image/upload/v1775240411/WhatsApp_Image_2026-04-02_at_10.24.47_vkvutg.jpg" alt="Damien Braun" className="absolute inset-0 w-full h-full object-cover" />
             {/* Decorative element like the image */}
             <div className="absolute top-0 left-0 w-32 h-32 bg-[#070708] rounded-br-[3rem] border-r border-b border-gray-800 z-10"></div>
           </div>
