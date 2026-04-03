@@ -118,7 +118,7 @@ const Hero = () => {
   return (
     <section id='home' className="pt-10 md:pt-20 pb-10 px-6 md:px-10 bg-[#070708] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-0">
+        <div className="flex flex-col lg:flex-row space-y-4 justify-between items-start lg:items-end mb-10 md:mb-16 gap-6 md:gap-0">
           <div>
             <p className="text-gray-400 tracking-[0.2em] text-xs font-semibold mb-3 md:mb-4 uppercase">
               Stunning Photography By
@@ -128,7 +128,7 @@ const Hero = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:space-x-4 mb-2">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3 lg:space-x-4 mb-2">
             <div className="flex items-center justify-center w-28 md:w-32 h-10 md:h-12 bg-[#2a2a30] rounded-l-full rounded-r-full relative border border-gray-700">
               <span className="text-sm font-medium pr-8">Let's</span>
               <div className="absolute right-1 w-8 h-8 md:w-10 md:h-10 bg-[#4f46e5] rounded-full flex items-center justify-center">
