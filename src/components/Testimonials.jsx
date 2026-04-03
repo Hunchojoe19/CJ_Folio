@@ -91,7 +91,7 @@ const Testimonials = () => {
       {/* Large Watermark */}
       <div className="w-full overflow-hidden absolute bottom-[-5%] left-0 right-0 z-0 flex justify-center pointer-events-none select-none">
         <h1 className="text-[12rem] lg:text-[18rem] font-bold text-gray-800/20 leading-none tracking-tighter uppercase whitespace-nowrap">
-          Damien
+          Doc &nbsp; Photography
         </h1>
       </div>
     </section>
