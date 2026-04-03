@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { ArrowUpRight, Instagram } from 'lucide-react';
 import Marquee from './Marquee';
 
 const Footer = () => {
