@@ -8,7 +8,7 @@ const faqsLeft = [
   },
   {
     question: "How can I book a photography session with you?",
-    answer: "You can book a session by reaching out through the contact form on this website or by sending an email directly to damienbraun@gmail.com."
+    answer: "You can book a session by reaching out through the contact form on this website or by sending an email directly to Idaviesco@yahoo.com."
   },
   {
     question: "What equipment do you use for your photography?",
