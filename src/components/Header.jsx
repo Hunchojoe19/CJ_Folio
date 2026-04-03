@@ -159,7 +159,7 @@ const Header = () => {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:contact@docphotography.com"
+                  href="mailto:Idaviesco@yahoo.com"
                   className="flex items-center p-4 space-x-4 transition-colors border border-gray-800 rounded-xl bg-[#0a0a0c] hover:border-gray-600 group"
                 >
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/50 text-gray-300 group-hover:text-white group-hover:bg-gray-700">
