@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Mail, Phone } from 'lucide-react';
+import { Menu, X, Mail, Phone, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/CJ Photography LOGO.png';
 
@@ -36,6 +36,14 @@ const Header = () => {
   const [activeTab, setActiveTab] = useState('#home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyPhone = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('3099970735');
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
 
   const navItems = [
     { label: 'Home', href: '#home' },
@@ -172,14 +180,17 @@ const Header = () => {
                 </a>
 
                 <a
-                  href="tel:+1234567890"
-                  className="flex items-center p-4 space-x-4 transition-colors border border-gray-800 rounded-xl bg-[#0a0a0c] hover:border-gray-600 group"
+                  href="#"
+                  onClick={handleCopyPhone}
+                  className="flex items-center p-4 space-x-4 transition-colors border border-gray-800 rounded-xl bg-[#0a0a0c] hover:border-gray-600 group cursor-pointer"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/50 text-gray-300 group-hover:text-white group-hover:bg-gray-700">
-                    <Phone className="w-5 h-5" />
+                  <div className={`flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/50 group-hover:bg-gray-700 transition-colors ${isCopied ? 'text-green-400' : 'text-gray-300 group-hover:text-white'}`}>
+                    {isCopied ? <Check className="w-5 h-5" /> : <Phone className="w-5 h-5" />}
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Call us</p>
+                    <p className={`text-sm transition-colors ${isCopied ? 'text-green-400' : 'text-gray-400'}`}>
+                      {isCopied ? 'Copied to clipboard!' : 'Copy phone number'}
+                    </p>
                     <p className="text-white font-medium">3099970735</p>
                   </div>
                 </a>
