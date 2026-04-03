@@ -60,18 +60,18 @@ const About = () => {
             </div>
 
             {/* Socials & Actions */}
-            <div className="flex items-center justify-between mt-auto">
+            <div className="flex items-center mt-auto">
               {/* Social icons */}
-              <div className="flex items-center space-x-3">
-                <a href="https://www.instagram.com/doc_photoz/?hl=en" className="hover:text-white transition">
-                  <button className="cursor-pointer flex space-x-2 mb-4 md:mb-0">
-                    <Instagram className="w-4 h-4" />
-                    <p className="">Instagram</p>
-                    {/* <a href="#" className="hover:text-white transition"><Twitter className="w-4 h-4" /></a>
+
+              <a href="https://www.instagram.com/doc_photoz/?hl=en" className="hover:text-white transition">
+                <button className="cursor-pointer flex items-center space-x-2 mb-4 md:mb-0">
+                  <Instagram className="w-4 h-4" />
+                  <p className="">Instagram</p>
+                  {/* <a href="#" className="hover:text-white transition"><Twitter className="w-4 h-4" /></a>
             <a href="#" className="hover:text-white transition"><Linkedin className="w-4 h-4" /></a> */}
-                  </button>
-                </a>
-              </div>
+                </button>
+              </a>
+
 
               {/* Action Buttons */}
               {/* <div className="flex space-x-3 text-sm font-medium">
