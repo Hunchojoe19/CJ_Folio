@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Instagram } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Marquee from './Marquee';
 import { FaInstagram } from 'react-icons/fa';
 
