@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/CJ Photography LOGO.png';
 
 const menuVariants = {
   hidden: {
@@ -45,9 +46,9 @@ const Header = () => {
   return (
     <header className="flex flex-col py-4 px-6 md:py-6 md:px-10 border-b border-gray-800/50 bg-[#070708] backdrop-blur-md sticky top-0 z-50">
       <div className="flex items-center justify-between w-full">
-        {/* <div className="text-xl md:text-2xl font-bold tracking-widest text-white uppercase">
-          
-        </div> */}
+        <a href="#home" className="shrink-0 flex items-center">
+          <img src={logo} alt="CJ Photography" className="h-10 md:h-14 w-auto object-contain" />
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1 bg-[#121214] border border-gray-800 rounded-full px-2 py-2">
